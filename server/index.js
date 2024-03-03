@@ -3,6 +3,8 @@
 const Glue = require('@hapi/glue');
 const Exiting = require('exiting');
 const Manifest = require('./manifest');
+const userRoutes = require('./routes/userRoutes')
+
 require('dotenv').config();
 
 exports.deployment = async ({ start } = {}) => {
@@ -16,7 +18,9 @@ exports.deployment = async ({ start } = {}) => {
         return server;
     }
 
+
     await server.initialize();
+    await server.register(userRoutes)
 
     return server;
 };
