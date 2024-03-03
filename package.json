@@ -1,5 +1,5 @@
 {
-  "name": "cineman",
+  "name": "iut-project",
   "version": "1.0.0",
   "description": "",
   "author": "",
@@ -10,7 +10,7 @@
     "test": "test"
   },
   "scripts": {
-    "start": "node server",
+    "start": "nodemon server/index.js",
     "test": "lab -a @hapi/code -I \"__core-js_shared__,CSS,regeneratorRuntime,core\" -L",
     "lint": "eslint ."
   },
@@ -18,8 +18,16 @@
     "@hapi/boom": "9.x.x",
     "@hapipal/haute-couture": "4.x.x",
     "@hapipal/schwifty": "6.x.x",
+    "bcrypt": "^5.1.1",
+    "exiting": "6.0.1",
     "joi": "17.x.x",
-    "objection": "2.x.x"
+    "jsonwebtoken": "^9.0.2",
+    "nodemailer": "^6.9.11",
+    "objection": "2.x.x",
+    "pg": "^8.11.3",
+    "pg-hstore": "^2.3.4",
+    "sequelize": "^6.37.1",
+    "sqlite3": "5.0.2"
   },
   "peerDependencies": {
     "knex": "0.21.x"
@@ -30,26 +38,19 @@
     "@hapi/eslint-plugin-hapi": "4.x.x",
     "@hapi/glue": "8.x.x",
     "@hapi/hapi": "20.x.x",
-<<<<<<< HEAD
-    "@hapi/inert": "6.x.x",
-=======
     "@hapi/hoek": "9.x.x",
->>>>>>> 66973ef ((flavor) objection v3.0.0)
-    "@hapi/lab": "24.x.x",
+    "@hapi/inert": "6.x.x",
+    "@hapi/lab": "23.x.x",
     "@hapi/vision": "6.x.x",
     "@hapipal/confidence": "6.x.x",
     "@hapipal/hpal": "3.x.x",
     "@hapipal/hpal-debug": "2.x.x",
     "@hapipal/toys": "3.x.x",
     "babel-eslint": "10.x.x",
-    "dotenv": "8.x.x",
+    "dotenv": "^8.6.0",
     "eslint": "7.x.x",
-    "exiting": "6.x.x",
-<<<<<<< HEAD
-    "hapi-swagger": "14.x.x"
-=======
-    "knex": "0.21.x",
-    "sqlite3": "5.x.x"
->>>>>>> 66973ef ((flavor) objection v3.0.0)
+    "hapi-swagger": "14.x.x",
+    "knex": "^0.21.16",
+    "nodemon": "^3.1.0"
   }
 }
