@@ -13,14 +13,14 @@ module.exports = new Confidence.Store({
     server: {
         host: 'localhost',
         port: {
-            $param: 'PORT',
+            $env: 'PORT',
             $coerce: 'number',
             $default: 3000
         },
         debug: {
-            $filter: 'NODE_ENV',
+            $filter: { $env: 'NODE_ENV' },
             $default: {
-                log: ['error', 'start'],
+                log: ['error'],
                 request: ['error']
             },
             production: {
@@ -35,9 +35,9 @@ module.exports = new Confidence.Store({
                 options: {}
             },
             {
-<<<<<<< HEAD
                 plugin: './plugins/swagger'
-=======
+            },
+            {
                 plugin: '@hapipal/schwifty',
                 options: {
                     $filter: 'NODE_ENV',
@@ -59,11 +59,10 @@ module.exports = new Confidence.Store({
                         migrateOnStart: false
                     }
                 }
->>>>>>> 66973ef ((flavor) objection v3.0.0)
             },
             {
                 plugin: {
-                    $filter: 'NODE_ENV',
+                    $filter: { $env: 'NODE_ENV' },
                     $default: '@hapipal/hpal-debug',
                     production: Toys.noop
                 }
@@ -71,3 +70,4 @@ module.exports = new Confidence.Store({
         ]
     }
 });
+
